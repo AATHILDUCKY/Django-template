@@ -1,0 +1,189 @@
+{% extends "users/base.html" %}
+{% block title %} Login Page {% endblock title%}
+{% block content %}
+<style>
+    .form-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 70%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+        .container {
+            max-width: 90%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            max-width: 100%;
+            margin: 0 1rem;
+        }
+    }
+
+    .card {
+        border-radius: 12px;
+        padding: 1.5rem;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #4a4a4a;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-size: 1rem;
+    }
+
+    .form-control:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+        outline: none;
+    }
+
+    .btn {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #4c51bf;
+    }
+
+    .btn-link {
+        color: #6366f1;
+        font-weight: 500;
+    }
+
+    .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .card-footer {
+        text-align: center;
+        font-size: 0.875rem;
+        color: #6b7280;
+    }
+
+    .card-footer a {
+        color: #4c51bf;
+        text-decoration: none;
+    }
+
+    .card-footer a:hover {
+        text-decoration: underline;
+    }
+</style>
+<div class="form-content my-3 p-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
+                    <div class="card-header justify-content-center">
+                      <h3 class="font-weight-light my-1 text-center">Sign In</h3>
+                    </div>
+                    {% if form.errors %}
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <div id="form_errors">
+                                {% for key, value in form.errors.items %}
+                                    <strong>{{ value }}</strong>
+                                {% endfor %}
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-md-10 offset-md-1">
+                                    <div class="form-group">
+                                        <div class="flex justify-center space-x-4">
+                                            <a href="{% url 'social:begin' 'github' %}" class="flex items-center px-6 py-3 border border-gray-300 rounded-full bg-gray-800 text-white hover:bg-gray-700 focus:outline-none transition duration-300">
+                                                <i class="fab fa-github mr-2"></i>
+                                                Sign in with GitHub
+                                            </a>
+                                            <a href="{% url 'social:begin' 'google-oauth2' %}" class="flex items-center px-6 py-3 border border-gray-300 rounded-full bg-blue-500 text-white hover:bg-blue-400 focus:outline-none transition duration-300">
+                                                <i class="fab fa-google mr-2"></i>
+                                                Sign in with Google
+                                            </a>
+                                        </div>
+                                        
+                                        <br>
+                                        <hr>
+                                        <p class="text-center"><strong>OR</strong></p>
+                                        <hr>
+                                        <br>
+                                        <label class="small mb-1">Username</label>
+                                        {{ form.username }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-10 offset-md-1">
+                                    <div class="form-group">
+                                      <label class="small mb-1">Password</label>
+                                      {{ form.password }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-10 offset-md-1">
+                                    <div class="form-group">
+                                        <!-- Add a Remember me functionality -->
+                                        {{ form.remember_me }}
+                                        <label> Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-10 offset-md-1">
+                                    <div class="form-group mt-0 mb-1">
+                                      <button name="login" class="col-md-12 btn btn-dark bg-blue-200 rounded-md hover:text-white" id="login">Sign in</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <div class="small">
+                            <a href="{% url 'users-register' %}">Don't have an account yet? Go to signup</a><br>
+                            <a href="{% url 'password_reset' %}"><i>Forgot Password?</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+{% endblock content %}
