@@ -1,32 +1,43 @@
-# Django-registration-and-login-system
-This web app has been developed using the popular Django framework and Bootstrap for the frontend. My motivation to build this project is so that I can learn about Django and tighten up my skills. This mini-app can be easily integrated into a bigger system project that needs to have a registration and login system.
+# Django User Management System  
 
-### Basic Features of The App
-    
-* Register – Users can register and create a new profile
-* Login - Registered users can login using username and password
-* Social Apps Login – Users can login using their GitHub or Google account
-* User Profile - Once logged in, users can create and update additional information such as avatar and bio in the profile page
-* Update Profile – Users can update their information such as username, email, password, avatar and bio
-* Remember me – Cookie Option, users don’t have to provide credentials every time they hit the site
-* Forgot Password – Users can easily retrieve their password if they forget it 
-* Admin Panel – admin can CRUD users
+A simple Django-based User Management System that includes features such as account registration, login, logout, and more.  
 
-![ScreenShot](https://user-images.githubusercontent.com/66206865/131695930-648342b0-010b-44b2-a419-15ad54d47869.png)
+## Features  
+- User registration  
+- User login  
+- User logout
+- User password change
+- Admin dashboard  
+- Secure authentication system
+- Profile page of the user
+- Contact page
+- more
 
-## Tutorial
-[Here](https://dev.to/earthcomfy/series/14274) is a tutorial on how to build this project.
+## Prerequisites  
+- Python 3.x  
+- Django 4.x or later  
 
-### Quick Start
-To get this project up and running locally on your computer follow the following steps.
-1. Set up a python virtual environment
-2. Run the following commands
-```
-$ pip install -r requirements.txt
-$ python manage.py migrate
-$ python manage.py createsuperuser
-$ python manage.py runserver
-```
+## Installation  
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+
+2. Easy setup
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   ```bash
+   python manage.py migrate
+   ```
    
-3. Open a browser and go to http://localhost:8000/
+   ```bash
+   python manage.py createsuperuser
+   ```
 
+   ```bash
+   python manage.py runserver
+   ```
+   
