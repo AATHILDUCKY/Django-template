@@ -40,4 +40,26 @@ A simple Django-based User Management System that includes features such as acco
    ```bash
    python manage.py runserver
    ```
-   
+
+
+## Usage
+
+- Navigate to `http://127.0.0.1:8000` to access the application.
+
+- Use the admin panel at `http://127.0.0.1:8000/admin` with the superuser credentials.
+
+## Screen shots
+
+![App Screenshot](https://raw.githubusercontent.com/AATHILDUCKY/Django-template/refs/heads/main/screenshorts/profile.png "profile page")
+
+![App Screenshot](https://raw.githubusercontent.com/AATHILDUCKY/Django-template/refs/heads/main/screenshorts/login.png "login account")
+
+![App Screenshot](https://raw.githubusercontent.com/AATHILDUCKY/Django-template/refs/heads/main/screenshorts/forgot_password.png "forgot password")
+
+![App Screenshot](https://raw.githubusercontent.com/AATHILDUCKY/Django-template/refs/heads/main/screenshorts/changepassword.png "change password")
+
+![App Screenshot](https://raw.githubusercontent.com/AATHILDUCKY/Django-template/refs/heads/main/screenshorts/registration.png "user registration")
+
+![App Screenshot](https://raw.githubusercontent.com/AATHILDUCKY/Django-template/refs/heads/main/screenshorts/logout.png "logout")
+
+![App Screenshot](https://raw.githubusercontent.com/AATHILDUCKY/Django-template/refs/heads/main/screenshorts/contactpage.png "contact page")
